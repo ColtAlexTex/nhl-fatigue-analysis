@@ -1,0 +1,72 @@
+rows used in models: 9154
+m1 home only: R2=0.0273
+m2 + strength: R2=0.1625
+m3 + b2b: R2=0.1650 | b2b coef=-0.0168 CI [-0.0221, -0.0114] p=0.0000
+m4 + opp b2b: R2=0.1690 | b2b coef=-0.0215 CI [-0.0273, -0.0156] p=0.0000
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               xg_share   R-squared:                       0.169
+Model:                            OLS   Adj. R-squared:                  0.169
+Method:                 Least Squares   F-statistic:                     238.0
+Date:                Mon, 12 Oct 2026   Prob (F-statistic):           2.54e-24
+Time:                        23:40:45   Log-Likelihood:                 7312.4
+No. Observations:                9154   AIC:                        -1.461e+04
+Df Residuals:                    9148   BIC:                        -1.457e+04
+Df Model:                           5                                         
+Covariance Type:              cluster                                         
+================================================================================
+                   coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------
+Intercept        0.4824      0.028     17.232      0.000       0.428       0.537
+home             0.0352      0.002     16.267      0.000       0.031       0.039
+strength         0.7943      0.047     16.882      0.000       0.702       0.887
+opp_strength    -0.7943      0.030    -26.748      0.000      -0.852      -0.736
+b2b             -0.0215      0.003     -7.165      0.000      -0.027      -0.016
+opp_b2b          0.0215      0.003      6.943      0.000       0.015       0.028
+==============================================================================
+Omnibus:                       30.810   Durbin-Watson:                   1.945
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               23.739
+Skew:                          -0.000   Prob(JB):                     7.00e-06
+Kurtosis:                       2.751   Cond. No.                         43.2
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (CRV1)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               xg_share   R-squared:                       0.169
+Model:                            OLS   Adj. R-squared:                  0.168
+Method:                 Least Squares   F-statistic:                     169.7
+Date:                Mon, 12 Oct 2026   Prob (F-statistic):           5.67e-24
+Time:                        23:40:45   Log-Likelihood:                 7313.1
+No. Observations:                9154   AIC:                        -1.461e+04
+Df Residuals:                    9145   BIC:                        -1.454e+04
+Df Model:                           8                                         
+Covariance Type:              cluster                                         
+==================================================================================================================
+                                                     coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------------------
+Intercept                                          0.4828      0.028     17.247      0.000       0.428       0.538
+C(b2b_pattern, Treatment("none"))[T.AWAY>AWAY]    -0.0208      0.005     -4.263      0.000      -0.030      -0.011
+C(b2b_pattern, Treatment("none"))[T.AWAY>HOME]    -0.0198      0.006     -3.570      0.000      -0.031      -0.009
+C(b2b_pattern, Treatment("none"))[T.HOME>AWAY]    -0.0282      0.005     -5.759      0.000      -0.038      -0.019
+C(b2b_pattern, Treatment("none"))[T.HOME>HOME]    -0.0169      0.007     -2.426      0.015      -0.031      -0.003
+home                                               0.0346      0.002     16.278      0.000       0.030       0.039
+strength                                           0.7941      0.047     16.845      0.000       0.702       0.886
+opp_strength                                      -0.7942      0.030    -26.739      0.000      -0.852      -0.736
+opp_b2b                                            0.0215      0.003      6.950      0.000       0.015       0.028
+==============================================================================
+Omnibus:                       30.108   Durbin-Watson:                   1.946
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               23.270
+Skew:                           0.000   Prob(JB):                     8.85e-06
+Kurtosis:                       2.753   Cond. No.                         43.0
+==============================================================================
+
+Notes:
+[1] Standard Errors are robust to cluster correlation (CRV1)
+All four patterns equal:
+<Wald test (chi2): statistic=3.321492637685069, p-value=0.34466245479565055, df_denom=3>
+AWAY>AWAY vs HOME>AWAY:
+<Wald test (chi2): statistic=1.70143353311344, p-value=0.1921006089157559, df_denom=1>
+HOME>HOME vs AWAY>HOME:
+<Wald test (chi2): statistic=0.12383892444086628, p-value=0.7249075961149269, df_denom=1>
