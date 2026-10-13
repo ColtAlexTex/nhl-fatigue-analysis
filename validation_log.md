@@ -74,3 +74,41 @@ Window choice; analyzing the 2022 to 2025 seasons.
 
 
 
+Entry 5:
+
+Check against official standings for all 32 teams (2025 season)
+
+&#x09;I compared each team's season goals for and against in my cleaned data with the Hockey Reference standings, which I copied into my spreadsheet by hand. MoneyPuck goals exclude shootout goals, so I compared against in-play goals. NHL games cannot end tied, so a game with equal goals in MoneyPuck is a shootout game. I checked that each team's shootout wins plus shootout losses equals it's tied games
+
+&#x09;Goals for differed for 0 out of the 32 teams, and goals against differed for 0 of the 32. Shootout wins plus losses equaled tied games for all 32 teams, which equaled a league total of 119 wins and 119 losses.
+
+&#x09;I did not check games played at neutral sites.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
