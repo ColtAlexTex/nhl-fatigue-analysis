@@ -26,3 +26,7 @@ To what extent do back-to-back games, rest gaps, and travel change NHL team perf
 
 &#x09;To check that counting each game twice wasn't the driving result, I repeated the analysis using one row per game (from the home teams perspective). A tired home team had a xG share about 1.9 points lower, and a tired visiting team had a home-team xG share about 2.3 points higher, both staying consistent with the main result.
 
+
+
+&#x09;I checked whether the results hold across seasons. Based on 2022-2024 alone, a back-to-back was associated with 2.2 points lower xG share; on 2025 alone, 2.0 points lower. When I used a model to fit on 2022-2024 to predict xG share for 2025 games, adding team strength cut prediction error by about 5%, while adding back-to-back status cut it by about 0.4%. The fatigue effect is consistent but small relative to the noise in a single game.
+
