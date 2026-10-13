@@ -58,3 +58,10 @@ print("AWAY>AWAY vs HOME>AWAY:")
 print(m6.wald_test("aa = ha", scalar=True))
 print("HOME>HOME vs AWAY>HOME:")
 print(m6.wald_test("hh = ah", scalar=True))
+
+# Robustness: one row per game (home team's row only)
+h = d[d["home"] == 1].copy()
+m7 = smf.ols("xg_share ~ strength + opp_strength + b2b + opp_b2b", data=h).fit(
+    cov_type="cluster", cov_kwds={"groups": h["team_id"]})
+print("One row per game (home team's perspective):", len(h), "games")
+print(m7.summary())
