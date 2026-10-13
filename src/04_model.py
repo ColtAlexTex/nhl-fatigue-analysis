@@ -65,3 +65,25 @@ m7 = smf.ols("xg_share ~ strength + opp_strength + b2b + opp_b2b", data=h).fit(
     cov_type="cluster", cov_kwds={"groups": h["team_id"]})
 print("One row per game (home team's perspective):", len(h), "games")
 print(m7.summary())
+
+# Replication: fit on 2022-2024 and on 2025 separately
+train = d[d["season"] <= 2024]
+test = d[d["season"] == 2025]
+
+def b2b_effect(data, label):
+    m = smf.ols("xg_share ~ home + strength + opp_strength + b2b + opp_b2b",
+                data=data).fit(cov_type="cluster", cov_kwds={"groups": data["team_id"]})
+    lo, hi = m.conf_int().loc["b2b"]
+    print(f"{label}: b2b coef={m.params['b2b']:.4f} CI [{lo:.4f}, {hi:.4f}] ({len(data)} rows)")
+
+b2b_effect(train, "2022-2024")
+b2b_effect(test, "2025")
+
+# Prediction check: does adding back-to-back improve predictions on unseen 2025 games?
+def rmse(formula):
+    m = smf.ols(formula, data=train).fit()
+    return ((test["xg_share"] - m.predict(test)) ** 2).mean() ** 0.5
+
+print("RMSE home only:", round(rmse("xg_share ~ home"), 5))
+print("RMSE + strength:", round(rmse("xg_share ~ home + strength + opp_strength"), 5))
+print("RMSE + back-to-back:", round(rmse("xg_share ~ home + strength + opp_strength + b2b + opp_b2b"), 5))
