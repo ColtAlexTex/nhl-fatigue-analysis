@@ -16,7 +16,7 @@ File: official\_standings\_hockey\_reference.csv (32 teams: GP, W, L, OL, PTS, G
 
 Date accessed: October 13, 2026
 
-Terms:Sports Reference Terms of Use (last updated May 19, 2023). They allow reuse of data from individual pages with explicit credit, and prohibit bulk scraping, building a competing database, and using content to train or prompt AI models. I copied one table by hand into Excel, with no scripts, and used it only to check my goal totals, not as model input.
+Terms: Sports Reference Terms of Use (last updated May 19, 2023). They allow reuse of data from individual pages with explicit credit, and prohibit bulk scraping, building a competing database, and using content to train or prompt AI models. I copied one table by hand into Excel, with no scripts, and used it only to check my goal totals, not as model input.
 
-Note: credit to Sports Reference LLC. I used the data only to check my goals-for and goals-against totals, not as model input. I scraped this data from the website and added to an excel sheet to integrate it into python, then added the team codes to relate the data from Hockey Reference to the data from MoneyPuck.
+Note: credit to Sports Reference LLC. I used the data only to check my goals-for and goals-against totals, and shootout totals against MoneyPuck, not as model input. I  copied this data by hand into an excel sheet and added MoneyPuck team codes so it could be matched in python.
 
