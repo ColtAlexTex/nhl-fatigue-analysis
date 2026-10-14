@@ -32,7 +32,7 @@ To what extent do back-to-back games change NHL team performance, after controll
 
 
 
-\## Data:
+## Data:
 
 &#x09;Game-level team data from MoneyPuck, 2022-23 to 2025-26 regular season: 32 teams x 82 games x 4 seasons = 10496 team-game rows. I checked it for duplicates, home/away pairing, goal agreement between the two sides of each game, and dates. I also reconciled 2025 goals and shootout results against a secondary source (see validation log Entry 5).
 
@@ -42,39 +42,39 @@ Source:
 
 &#x09;MoneyPuck.com game-level data (https://moneypuck.com/data.htm). Data are not redistributed in this repository.
 
-\## Method:
+## Method:
 
 &#x09;Outcome is expected goal share = xG for / (xG for + xG against). For each team-game I built rest days, back-to-back flag, opponent rest, and team and opponent strength (season-to-date average xG share, using only earlier games). I fit OLS regressions with standard errors clustered by team and tested H1 and H2 with Wald tests.
 
-\## Results:
+## Results:
 
 !\[Rest days vs xG share](results/rest\_by\_xg\_share.png)
 
-\### H1 (back-to-backs lower performance): 
+### H1 (back-to-backs lower performance): 
 
 &#x09;Supported. A team on the second night had a xG share 0.0215 lower (2.2 percentage points), 95% confidence interval (-0.027, -0.016), p < 0.001, after controlling for home ice, own strength, opponent strength, and opponent rest. The opponent being on a back-to-back raised xG share by 0.0215 (CI \[0.015, 0.028])
 
-\### H2: 
+### H2: 
 
 &#x09;Not supported. I predicted the effect would be largest for away-then-away back-to-backs, then home-then-away, then home-then-home, then away-then-home. The point estimates (xG share points lower than a game without a back-to-back) were home-then-away 2.8, away-then-away 2.1, away-then-home 2.0, and home-then-home 1.7. The order differs from my prediction.
 
 &#x09;Additionally, the Wald test could not distinguish the four patterns (p = 0.34), so there is no evidence the effect differs by home/away pattern. Comparisons between patterns with the same second-game location also found no difference (away-then-away vs home-then-away: p = 0.19; home-then-home vs away-then-home: p = 0.72). Each pattern has only 212 to 730 games (away-to-away: 730, home-to-away: 341, away-to-home: 314, home-to-home: 212), so a small difference could still be hidden.
 
-\## Robustness: 
+## Robustness: 
 
 &#x09;Because each game appears twice (once per team), I repeated the analysis with one row per game from the home team's perspective (4577 games). A tired home team had an xG share about 1.9 points lower (-0.0189, CI \[-0.028, -0.009], p < 0.001), and a tired visiting team raised the home teams xG share by about 2.3 points (0.0227, CI \[0.015, 0.031]). Both are consistent with the main result.
 
 &#x09;The effect was also stable across periods: -0.0217 (CI \[-0.0290, -0.0145]) in 2022-2024 and -0.0203 (CI \[-0.0306, -0.0101]) in 2025
 
-\## Prediction check:
+## Prediction check:
 
 &#x09;I fit models on 2022-2024 and predicted xG share for 2025 games. Adding team strength cut prediction error (RMSE) from 0.11319 to 0.10777, about 5%. Adding back-to-back status lowered it slightly more to 0.10734, about 0.4%. The fatigue effect is consistent but small relative to the noise in a single game.
 
-\## Practical size:
+## Practical size:
 
 &#x09;about 0.27 xG per game, calculated as 2 x 0.0215 x average total xG per game (\~6.3).
 
-\## Limitations:
+## Limitations:
 
 &#x09;Team strength is built from the same outcome I'm modeling
 
@@ -84,11 +84,11 @@ Source:
 
 &#x09;Shootout games are scored as ties in the MoneyPuck goal counts
 
-\## Future Work:
+## Future Work:
 
 &#x09;
 
-\## How to Reproduce:
+## How to Reproduce:
 
 1\. Download `all\_teams.csv` from https://moneypuck.com/data.htm and save it as `data/games\_all.csv`.
 
