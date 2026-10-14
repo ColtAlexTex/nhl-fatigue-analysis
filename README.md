@@ -48,7 +48,7 @@ Outcome is expected goal share = xG for / (xG for + xG against). For each team-g
 
 ## Results:
 
-![Rest days vs xG share](resultsrest_by_xg_share.png)
+![Rest days vs xG share](results/rest_by_xg_share.png)
 
 ### H1 (back-to-backs lower performance): 
 
