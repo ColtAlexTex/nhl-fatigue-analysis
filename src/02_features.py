@@ -1,3 +1,4 @@
+# Build rest-day, back-to-back, and outcome (xG share) features.
 import pandas as pd
 
 g = pd.read_csv("data/games_clean.csv", parse_dates=["date"])

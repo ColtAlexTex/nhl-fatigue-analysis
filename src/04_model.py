@@ -1,3 +1,4 @@
+# Fit the models, run Wald tests, robustness checks, and the prediction comparison.
 import pandas as pd
 import statsmodels.formula.api as smf
 

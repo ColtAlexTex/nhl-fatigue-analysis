@@ -1,3 +1,4 @@
+# Explore xG share by rest days and back-to-back pattern; save the plot.
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -27,4 +28,4 @@ plt.xticks([0, 1, 2, 3], ["0 (b2b)", "1", "2", "3+"])
 plt.xlabel("Rest days before the game")
 plt.ylabel("xG share")
 plt.title("xG share by rest days (95% CI)")
-plt.savefig("rest_by_xg_share.png", dpi=150, bbox_inches="tight")
+plt.savefig("results/rest_by_xg_share.png", dpi=150, bbox_inches="tight")

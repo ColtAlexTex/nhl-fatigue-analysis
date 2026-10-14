@@ -1,3 +1,4 @@
+# Load MoneyPuck data, keep regular-season team-games for 2022-2025, run validation checks.
 import pandas as pd
 
 # Load the MoneyPuck file

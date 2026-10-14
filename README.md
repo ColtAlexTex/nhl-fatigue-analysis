@@ -90,5 +90,19 @@ Source:
 
 \## How to Reproduce:
 
-&#x09;Run the scripts in src/ in order, from 01 to 04, after downloading the MoneyPuck game level file into data/.
+1\. Download `all\_teams.csv` from https://moneypuck.com/data.htm and save it as `data/games\_all.csv`.
+
+2\. Install the packages: `pip install -r requirements.txt`
+
+3\. From the project root, run the scripts in order:
+
+&#x20;  - `python src/01\_load\_validate.py` (loads, filters, and validates the data)
+
+&#x20;  - `python src/02\_features.py` (rest days, back-to-back flags)
+
+&#x20;  - `python src/03\_explore.py` (exploration and plot)
+
+&#x20;  - `python src/04\_model.py > results/model\_output.txt` (models and robustness checks)
+
+4\. `src/05\_standings\_check.py` reconciles goals and shootouts against official standings. It needs a hand-copied Hockey-Reference table that is not included, because of Sports Reference's terms of use.
 

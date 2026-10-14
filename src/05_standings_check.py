@@ -1,3 +1,4 @@
+# Reconcile 2025 goals and shootouts with official standings (needs a hand-copied table).
 import pandas as pd
 
 g = pd.read_csv("data/games_clean.csv")
