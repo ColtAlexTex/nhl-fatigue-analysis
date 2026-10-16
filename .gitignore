@@ -1,4 +1,4 @@
-data/games_all.csv
+data/all_teams.csv
 data/games_clean.csv
 data/games_features.csv
 data/official_standings_hockey_reference.csv
